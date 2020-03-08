@@ -1,15 +1,13 @@
-body {
+html, body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  height: 100%;
+  width: 100%;
+  background-color: #eeeeee !important;
 }
 
 /* GENERIC CLASSES */
@@ -36,11 +34,43 @@ code {
 
 /* LIST */
 .list {
-  padding: 0 30px;
+  padding: 0 15px 15px 15px;
 }
 
 .list-item {
+  margin-top: 15px;
   height: 64px;
-  border-bottom: 1px solid #aaa9a9;
   position: relative;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.list-item-title {
+  width: max-content;
+  left: 15px !important;
+}
+
+/* BUTTON */
+.add-button {
+  font-size: 25px;
+  position: absolute;
+  right: 30px;
+  transition: 0.4s;
+  font-weight: 300;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  height: 50%;
+}
+
+.delete-button {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: red;
 }
