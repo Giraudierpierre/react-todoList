@@ -4,18 +4,16 @@ import List from './components/organisms/List';
 import ListItem from './components/organisms/ListItem';
 import CreateListItem from './components/organisms/CreateListItem';
 import EditListItem from './components/organisms/EditListItem';
-import HeaderBar from './components/molecules/HeaderBar';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  /* Link */
 } from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <HeaderBar />
       <Router>
         <Switch>
           <Route path="/">
