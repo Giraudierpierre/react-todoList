@@ -1,40 +1,39 @@
 import React from 'react';
 import ListItem from './ListItem';
-import HomeHeaderBar from '../molecules/HomeHeaderBar';
 
 /* Mock data */
 function setLocalStorageData() {
     var data = [
         {
-            key: 0,
+            id: 0,
             title: 'Titre1',
         },
         {
-            key: 1,
+            id: 1,
             title: 'Titre2',
         },
         {
-            key: 2,
+            id: 2,
             title: 'Titre3',
         },
         {
-            key: 3,
+            id: 3,
             title: 'Titre4',
         },
         {
-            key: 4,
+            id: 4,
             title: 'Titre5',
         },
         {
-            key: 5,
+            id: 5,
             title: 'Titre6',
         },
         {
-            key: 6,
+            id: 6,
             title: 'Titre7',
         },
         {
-            key: 7,
+            id: 7,
             title: 'Titre8',
         }
     ];
@@ -49,19 +48,18 @@ function getLocalStorageData() {
 
 function List() {
     return(
-        <div>
-            <HomeHeaderBar />
+        <>
             <div className="list">
-                {getLocalStorageData().map(function(item, key) {
+                {getLocalStorageData().map(function(item, id) {
                     return(
                         <ListItem 
-                            key={key}
+                            key={id}
                             title={item.title}
                         />
                     )
                 })}
             </div>
-        </div>
+        </>
     )
 }
 

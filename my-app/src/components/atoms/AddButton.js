@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function AddButton() {
     return(
-        <a href="/add">
+        <Link to="/create">
             <span className="add-button">+</span>
-        </a>
+        </Link>
     );
 }
 

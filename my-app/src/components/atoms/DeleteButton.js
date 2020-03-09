@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function DeleteButton() {
     return(
-        <a href="/delete">
+        <Link to="/delete">
             <i className="fa fa-trash delete-button" aria-hidden="true"></i>
-        </a>
+        </Link>
     );
 }
 
