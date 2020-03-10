@@ -30,6 +30,9 @@ html, body {
 
 .header-bar-title {
   text-align: center;
+  width: max-content;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* LIST */
@@ -43,7 +46,7 @@ html, body {
   position: relative;
   border: 1px solid #eeeeee;
   border-radius: 5px;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
   background-color: #ffffff;
   color: #000000;
 }
@@ -73,4 +76,27 @@ html, body {
   transform: translateY(-50%);
   font-size: 18px;
   color: red;
+}
+
+.back-button {
+  position: absolute;
+  left: 30px;
+  transition: 0.4s;
+  font-weight: 300;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* TEXTAREA */
+.custom-textarea {
+  width: calc(100% - 30px);
+  min-height: calc(100vh - 97.5px);
+  border: none;
+  padding: 15px;
+  overflow-x: hidden;
+  outline: none;
 }
