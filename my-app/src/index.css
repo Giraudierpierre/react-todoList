@@ -98,13 +98,9 @@ html, body {
 
 .submit-button {
   font-size: 12px;
-  position: absolute;
   transition: 0.4s;
-  bottom: 50px;
   z-index: 1000;
   color: #fff;
-  right: 0;
-  left: 0;
   margin-left: auto;
   margin-right: auto;
   background-color: rgba(0, 0, 0, 0.5);
@@ -147,12 +143,21 @@ form.custom-form {
   position: relative;
 }
 
+.submit-section {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 96px;
+  background-color: #fff;
+}
+
 /* TEXTAREA */
 .custom-textarea {
   width: calc(100% - 30px);
-  min-height: calc(100vh - 97px);
+  min-height: calc(100vh - 190px);
   border: none;
   padding: 15px;
   overflow-x: hidden;
   outline: none;
+  resize: none;
 }

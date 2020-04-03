@@ -1,10 +1,10 @@
 import React from 'react';
-import CustomForm from '../molecules/CustomForm';
+import CreateForm from '../molecules/CreateForm';
 
 function CreateListItem() {
     return(
         <div className="create-list-item">
-            <CustomForm/>
+            <CreateForm/>
         </div>
     )
 }

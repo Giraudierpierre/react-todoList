@@ -11,7 +11,7 @@ function List() {
 
         let sortItems = items.sort(
             (a,b) => 
-            (new Date(b.date) - new Date(a.date)) || (b.id - a.id)
+            new Date(b.date) - new Date(a.date) || new Date(b.time) - new Date(a.time)
         );
 
         return sortItems;
@@ -21,13 +21,13 @@ function List() {
         <>
         {(getLocalStorageData().length > 0) ? (
             <div className="list">
-                {getLocalStorageData().map(function(item, id) {
+                {getLocalStorageData().map(function(item) {
                     const url = "/item/";
                     return(
-                        <Link to={{pathname: url + id}} key={"link" + id}> 
+                        <Link to={{pathname: url + item.id}} key={"link" + item.id}> 
                             <ListItem 
-                                key={id}
-                                id={id}
+                                key={item.id}
+                                id={item.id}
                                 title={item.text}
                                 date={item.date}
                             />
