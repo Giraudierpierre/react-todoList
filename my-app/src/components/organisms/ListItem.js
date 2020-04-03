@@ -1,17 +1,24 @@
 import React from 'react';
-import DeleteButton from '../atoms/DeleteButton';
+import Button from '../atoms/Button';
 import { Link } from 'react-router-dom';
 
 function ListItem(props) {
     return(
-        <Link to="list" params={{ id: props.id }}>
-            <div className="list-item">
+        <div className="list-item">
+            <Link to="list" params={{ id: props.id }}>
                 <span className="absolute-center list-item-title">
                     {props.title}
                 </span>
-                <DeleteButton />
-            </div>
-        </Link>
+            </Link>
+            <span className="absolute-center list-item-date">
+                {props.date}
+            </span>
+            {/* <Button
+            to="/delete"
+            childrenClassName="fa fa-trash delete-button"
+            type="deleteButton"
+            /> */}
+        </div>
     )
 }
 

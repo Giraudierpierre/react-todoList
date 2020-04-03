@@ -1,10 +1,10 @@
 import React from 'react';
-import CustomTextarea from '../atoms/CustomTextarea';
+import CustomForm from '../molecules/CustomForm';
 
 function CreateListItem() {
     return(
         <div className="create-list-item">
-            <CustomTextarea />
+            <CustomForm/>
         </div>
     )
 }

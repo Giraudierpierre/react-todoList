@@ -1,15 +1,27 @@
 import React from 'react';
-import AddButton from '../atoms/AddButton';
+import Button from '../atoms/Button';
 import { useLocation } from 'react-router-dom'
-import BackButton from '../atoms/BackButton';
 
 function HeaderBar() {
     let location = useLocation().pathname;
     return(
         <div className="header-bar">
-            {location !== '/' ? <BackButton /> : null}
+            {location !== '/' ? 
+                <Button 
+                className="back-button" 
+                childrenClassName="fa fa-long-arrow-left"
+                type="backButton"
+                /> 
+            : null}
             <span className="header-bar-title absolute-center">TODO LIST</span>
-            {location === '/' ? <AddButton /> : null}
+            {location === '/' ? 
+                <Button 
+                to="/create" 
+                className="add-button" 
+                type="addButton"
+                />
+            : null
+            }
         </div>
     )
 }
