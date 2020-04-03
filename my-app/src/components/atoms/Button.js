@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom'
 
-function CustomButton(props) {
+function Button(props) {
     let history = useHistory();
     return(
         <Link to={props.to ?? ''}>
@@ -19,4 +19,4 @@ function CustomButton(props) {
     );
 }
 
-export default CustomButton;
+export default Button;
