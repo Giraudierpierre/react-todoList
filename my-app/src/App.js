@@ -8,7 +8,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  /* Link */
 } from "react-router-dom";
 import HeaderBar from './components/molecules/HeaderBar';
 
@@ -26,7 +25,7 @@ function App() {
           <Route path="/create" exact>
             <CreateListItem />
           </Route>
-          <Route path="/edit/:id"> 
+          <Route path="/item/:id"> 
             <EditListItem />
           </Route>
         </Switch>

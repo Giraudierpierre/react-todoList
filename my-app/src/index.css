@@ -5,13 +5,8 @@ html, body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
   width: 100%;
   background-color: #eeeeee !important;
-}
-
-#root {
-  min-height: 100vh;
 }
 
 /* GENERIC CLASSES */
@@ -25,11 +20,17 @@ html, body {
 
 /* HEADER BAR */
 .header-bar {
+    position: relative;
     height: 64px;
     width: 100%;
     background-color: #555555;
     color: #fff;
-    position: relative;
+}
+
+.header-bar.homepage {
+    position: fixed;
+    top: 0;
+    z-index: 1;
 }
 
 .header-bar-title {
@@ -41,11 +42,11 @@ html, body {
 
 /* LIST */
 .list {
-  padding: 0 15px 15px 15px;
+  padding: 65px 15px 15px 15px;
 }
 
 .empty-list-message {
-  margin-top: 30px;
+  margin-top: 90px;
   text-align: center;
 }
 
@@ -63,6 +64,10 @@ html, body {
 .list-item-title {
   width: max-content;
   left: 15px;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .list-item-date {
@@ -71,7 +76,7 @@ html, body {
   width: max-content;
 }
 
-.list-itema {
+.list-item a {
   color:  #000000;
 }
 
@@ -145,7 +150,7 @@ form.custom-form {
 /* TEXTAREA */
 .custom-textarea {
   width: calc(100% - 30px);
-  min-height: calc(100vh - 97.5px);
+  min-height: calc(100vh - 97px);
   border: none;
   padding: 15px;
   overflow-x: hidden;
