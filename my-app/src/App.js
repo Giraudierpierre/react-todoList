@@ -1,25 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import List from './components/organisms/List';
+import ListItem from './components/organisms/ListItem';
+import CreateListItem from './components/organisms/CreateListItem';
+import EditListItem from './components/organisms/EditListItem';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import HeaderBar from './components/molecules/HeaderBar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <HeaderBar />
+        <Switch>
+          <Route path="/" exact>
+            <List />
+          </Route>
+          <Route path="/list/:id">
+            <ListItem />
+          </Route>
+          <Route path="/create" exact>
+            <CreateListItem />
+          </Route>
+          <Route path="/item/:id"> 
+            <EditListItem />
+          </Route>
+        </Switch>
+      </Router>
   );
 }
 
