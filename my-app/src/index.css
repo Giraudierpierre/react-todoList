@@ -10,6 +10,10 @@ html, body {
   background-color: #eeeeee !important;
 }
 
+#root {
+  min-height: 100vh;
+}
+
 /* GENERIC CLASSES */
 .absolute-center {
   position: absolute;
@@ -30,11 +34,19 @@ html, body {
 
 .header-bar-title {
   text-align: center;
+  width: max-content;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* LIST */
 .list {
   padding: 0 15px 15px 15px;
+}
+
+.empty-list-message {
+  margin-top: 30px;
+  text-align: center;
 }
 
 .list-item {
@@ -43,14 +55,24 @@ html, body {
   position: relative;
   border: 1px solid #eeeeee;
   border-radius: 5px;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
   background-color: #ffffff;
   color: #000000;
 }
 
 .list-item-title {
   width: max-content;
-  left: 15px !important;
+  left: 15px;
+}
+
+.list-item-date {
+  right: 15px;
+  left: auto;
+  width: max-content;
+}
+
+.list-itema {
+  color:  #000000;
 }
 
 /* BUTTON */
@@ -64,7 +86,34 @@ html, body {
   transform: translateY(-50%);
   color: #fff;
   height: 50%;
+  border: none;
+  cursor: pointer;
+  background: none;
 }
+
+.submit-button {
+  font-size: 12px;
+  position: absolute;
+  transition: 0.4s;
+  bottom: 50px;
+  z-index: 1000;
+  color: #fff;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.submit-button.disabled {
+  opacity: 0.3;
+}  
+
 
 .delete-button {
   position: absolute;
@@ -73,4 +122,32 @@ html, body {
   transform: translateY(-50%);
   font-size: 18px;
   color: red;
+}
+
+.back-button {
+  position: absolute;
+  left: 30px;
+  transition: 0.4s;
+  font-weight: 300;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* FORM */
+form.custom-form {
+  position: relative;
+}
+
+/* TEXTAREA */
+.custom-textarea {
+  width: calc(100% - 30px);
+  min-height: calc(100vh - 97.5px);
+  border: none;
+  padding: 15px;
+  overflow-x: hidden;
+  outline: none;
 }

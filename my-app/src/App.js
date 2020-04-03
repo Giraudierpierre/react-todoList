@@ -10,27 +10,27 @@ import {
   Route,
   /* Link */
 } from "react-router-dom";
+import HeaderBar from './components/molecules/HeaderBar';
 
 function App() {
   return (
-    <div>
       <Router>
+        <HeaderBar />
         <Switch>
-          <Route path="/">
+          <Route path="/" exact>
             <List />
           </Route>
-          <Route path="/:id">
+          <Route path="/list/:id">
             <ListItem />
           </Route>
-          <Route path="/create">
+          <Route path="/create" exact>
             <CreateListItem />
           </Route>
-          <Route path="/edit/:id">
+          <Route path="/edit/:id"> 
             <EditListItem />
           </Route>
         </Switch>
       </Router>
-    </div>
   );
 }
 

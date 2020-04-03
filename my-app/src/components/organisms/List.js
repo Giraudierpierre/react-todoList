@@ -1,70 +1,33 @@
 import React from 'react';
 import ListItem from './ListItem';
-import HomeHeaderBar from '../molecules/HomeHeaderBar';
-
-/* Mock data */
-function setLocalStorageData() {
-    var data = [
-        {
-            key: 0,
-            title: 'Titre1',
-        },
-        {
-            key: 1,
-            title: 'Titre2',
-        },
-        {
-            key: 2,
-            title: 'Titre3',
-        },
-        {
-            key: 3,
-            title: 'Titre4',
-        },
-        {
-            key: 4,
-            title: 'Titre5',
-        },
-        {
-            key: 5,
-            title: 'Titre6',
-        },
-        {
-            key: 6,
-            title: 'Titre7',
-        },
-        {
-            key: 7,
-            title: 'Titre8',
-        }
-    ];
-
-    localStorage.setItem('listItems', JSON.stringify(data));
-}
-
-function getLocalStorageData() {
-    var items = JSON.parse(localStorage.getItem('listItems'));
-    return items;
-}
 
 function List() {
+    function getLocalStorageData() {
+        let items = [];
+        for(let i = 0; i < localStorage.length; i++) {
+            items.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+        }
+    
+        return items;
+    }
     return(
-        <div>
-            <HomeHeaderBar />
+        <>
+        {(getLocalStorageData().length > 0) ? (
             <div className="list">
-                {getLocalStorageData().map(function(item, key) {
-                    return(
-                        <ListItem 
-                            key={key}
-                            title={item.title}
-                        />
-                    )
-                })}
+                {getLocalStorageData().map(function(item, id) {
+                        return(
+                            <ListItem 
+                                key={id}
+                                id={id}
+                                title={item.text}
+                                date={item.date}
+                            />
+                        )
+                    })}
             </div>
-        </div>
+        ) : <p className="empty-list-message">Créez votre première note !</p> }
+        </>
     )
 }
-
-setLocalStorageData();
 
 export default List;
