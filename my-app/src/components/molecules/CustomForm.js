@@ -14,11 +14,11 @@ function CustomForm() {
     }
 
     function setLocalStorageData(textareaValue, date) {
-        let id = 0;
-        let localStorageItems = getLocalStorageData();
-
-        if (localStorageItems.length > 0) {
-            id = localStorageItems.pop().id + 1;
+        let id = 1;
+        let localStorageLength = localStorage.length;
+        
+        if (localStorageLength > 0) {
+            id = localStorageLength + 1;
         }
 
         let data = {
@@ -31,20 +31,11 @@ function CustomForm() {
         window.location = "/";
     }
 
-    function getLocalStorageData() {
-        let items = [];
-        for(let i = 0; i < localStorage.length; i++) {
-            items.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
-        }
-    
-        return items;
-    }
-
     return(
         <>
             <form 
-            className="custom-form"
-            onSubmit={e => handleSubmit(e)}
+                className="custom-form"
+                onSubmit={e => handleSubmit(e)}
             >
                 <textarea
                     className="custom-textarea" 

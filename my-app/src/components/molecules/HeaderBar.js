@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom'
 function HeaderBar() {
     let location = useLocation().pathname;
     return(
-        <div className="header-bar">
+        <div className={`header-bar${location === '/' ? " homepage" : ""}`}>
             {location !== '/' ? 
                 <Button 
                 className="back-button" 
