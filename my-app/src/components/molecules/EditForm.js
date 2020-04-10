@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom'
+import { useLocation, useHistory } from 'react-router-dom'
 
 function EditForm() {
-    let location = useLocation().pathname;
+    const history = useHistory();
+    const location = useLocation().pathname;
     const [textareaValue, setTextareaValue] = useState(getItemData()['text']);
     
     function getItemData() {
@@ -44,7 +45,7 @@ function EditForm() {
         }
 
         localStorage.setItem(id, JSON.stringify(data));
-        window.location = "/";
+        history.push("/");
     }
 
     return(

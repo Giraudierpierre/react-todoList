@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ListItem from './ListItem';
-import { Link } from 'react-router-dom';
 
 function List() {
+
+    useEffect(() => { getLocalStorageData() });
+
     function getLocalStorageData() {
         let items = [];
         for (let i = 0; i < localStorage.length; i++) {
@@ -22,16 +24,13 @@ function List() {
         {(getLocalStorageData().length > 0) ? (
             <div className="list">
                 {getLocalStorageData().map(function(item) {
-                    const url = "/item/";
                     return(
-                        <Link to={{pathname: url + item.id}} key={"link" + item.id}> 
-                            <ListItem 
-                                key={item.id}
-                                id={item.id}
-                                title={item.text}
-                                date={item.date}
-                            />
-                        </Link>
+                        <ListItem 
+                            key={item.id}
+                            id={item.id}
+                            title={item.text}
+                            date={item.date}
+                        />
                     )
                 })}
             </div>

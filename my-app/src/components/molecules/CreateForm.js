@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function CreateForm() {
+    const history = useHistory();
     const [textareaValue, setTextareaValue] = useState('');
 
     function handleChange(value) {
@@ -30,7 +32,7 @@ function CreateForm() {
         }
 
         localStorage.setItem(id, JSON.stringify(data));
-        window.location = "/";
+        history.push("/");
     }
 
     return(
