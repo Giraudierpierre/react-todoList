@@ -52,7 +52,7 @@ html, body {
 
 .list-item {
   margin-top: 15px;
-  height: 64px;
+  height: 80px;
   position: relative;
   border: 1px solid #eeeeee;
   border-radius: 5px;
@@ -61,13 +61,18 @@ html, body {
   color: #000000;
 }
 
-.list-item-title {
+.list-item-content {
   width: max-content;
   left: 15px;
   width: 200px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.list-item-content span {
+  display: block;
+  margin-bottom: 5px;
 }
 
 .list-item-date {

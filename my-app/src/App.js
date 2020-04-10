@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import List from './components/organisms/List';
-import ListItem from './components/organisms/ListItem';
 import CreateListItem from './components/organisms/CreateListItem';
 import EditListItem from './components/organisms/EditListItem';
 import {
@@ -18,9 +17,6 @@ function App() {
         <Switch>
           <Route path="/" exact>
             <List />
-          </Route>
-          <Route path="/list/:id">
-            <ListItem />
           </Route>
           <Route path="/create" exact>
             <CreateListItem />
